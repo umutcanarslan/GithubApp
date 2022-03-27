@@ -30,8 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createSearchNavigationController() -> UINavigationController {
         let searchViewController = SearchViewController()
         searchViewController.title = "Search"
-        searchViewController.navigationController?.navigationBar.tintColor = .white
-        searchViewController.navigationController?.navigationBar.backgroundColor = .black
         searchViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
         return UINavigationController(rootViewController: searchViewController)
     }
@@ -39,8 +37,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createFavoritesNavigationController() -> UINavigationController {
         let favoritesViewController = FavoritesViewController()
         favoritesViewController.title = "Favorites"
-        favoritesViewController.navigationController?.navigationBar.tintColor = .white
-        favoritesViewController.navigationController?.navigationBar.backgroundColor = .black
         favoritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         return UINavigationController(rootViewController: favoritesViewController)
     }
@@ -54,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         return tabBar
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -83,6 +79,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-
