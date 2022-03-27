@@ -1,5 +1,5 @@
 //
-//  UIViewController + Extension.swift
+//  UIViewController+Extension.swift
 //  GithubApp
 //
 //  Created by Umut Can Arslan on 27.03.2022.
