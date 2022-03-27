@@ -26,14 +26,28 @@ class GHTextField: UITextField {
         
         textColor = .label
         tintColor = .label
-        textAlignment = .center
+        textAlignment = .left
+        
         font = UIFont.preferredFont(forTextStyle: .title2)
         adjustsFontSizeToFitWidth = true
         minimumFontSize = 12
         
         backgroundColor = .tertiarySystemBackground
         autocorrectionType = .no
+        returnKeyType = .search
         placeholder = "Enter a username"
     }
+        
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 16, dy: 0)
+    }
     
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 16, dy: 0)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 16, dy: 0)
+    }
+
 }
