@@ -78,7 +78,14 @@ extension SearchViewController {
 extension SearchViewController: UITextFieldDelegate {
     
     @objc func pushFollowerListViewController() {
-        guard isUsernameEntered else { return }
+        guard isUsernameEntered else {
+            presentAlertOnMainThread(
+                alertHeader: "Empty User",
+                alertMessage: "Pleaser enter a username. We need to know to look for.",
+                buttonText: "Okey"
+            )
+            return
+        }
         let followerListViewController = FollowerListViewController()
         followerListViewController.username = usernameTextField.text
         followerListViewController.title = usernameTextField.text
