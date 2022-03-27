@@ -126,7 +126,6 @@
 		80CBCAD127ED1B01008EC73E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				80CBCAE527F0A6EC008EC73E /* Alerts */,
 				80CBCADD27EFB84B008EC73E /* FollowerList */,
 				80CBCAD527ED1B7A008EC73E /* Favorites */,
 				80CBCAD227ED1B07008EC73E /* Search */,
@@ -199,6 +198,7 @@
 		80CBCAEB27F0D03B008EC73E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				80CBCAE527F0A6EC008EC73E /* Alerts */,
 				80CBCAEC27F0D04F008EC73E /* Follower.swift */,
 				80CBCAF327F0DBBC008EC73E /* User.swift */,
 			);
