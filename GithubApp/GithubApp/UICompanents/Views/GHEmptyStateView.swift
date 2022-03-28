@@ -9,12 +9,48 @@ import UIKit
 
 class GHEmptyStateView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    let messageLabel  = GHTitleLabel(textAlignment: .center, fontSize: 20)
+    let logoImageView = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        emptyStateViewConfigure()
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(message: String) {
+        super.init(frame: .zero)
+        messageLabel.text = message
+        emptyStateViewConfigure()
+    }
+    
+    private func emptyStateViewConfigure() {
+        addSubview(messageLabel)
+        addSubview(logoImageView)
+        
+        messageLabel.numberOfLines = 3
+        messageLabel.textColor = .secondaryLabel
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        logoImageView.image = UIImage(named: "empty-state-logo")
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate(
+            [
+                messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -200),
+                messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+                messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+                messageLabel.heightAnchor.constraint(equalToConstant: 200),
+                
+                logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
+                logoImageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
+                logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 200),
+                logoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 50)
+            ]
+        )
+    }
+    
 }
