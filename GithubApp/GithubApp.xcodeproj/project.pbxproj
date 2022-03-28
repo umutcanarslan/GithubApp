@@ -11,6 +11,7 @@
 		8012C55627F105A6002E49DF /* FollowerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012C55527F105A6002E49DF /* FollowerListViewModel.swift */; };
 		8012C55B27F10C43002E49DF /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012C55A27F10C43002E49DF /* FollowerCollectionViewCell.swift */; };
 		8012C55D27F10CCF002E49DF /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012C55C27F10CCF002E49DF /* GHAvatarImageView.swift */; };
+		8062890327F1912A006F2FF6 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062890227F1912A006F2FF6 /* UIHelper.swift */; };
 		80CBCABD27ED083C008EC73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCABC27ED083C008EC73E /* AppDelegate.swift */; };
 		80CBCABF27ED083C008EC73E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCABE27ED083C008EC73E /* SceneDelegate.swift */; };
 		80CBCAC627ED083E008EC73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CBCAC527ED083E008EC73E /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		8012C55527F105A6002E49DF /* FollowerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewModel.swift; sourceTree = "<group>"; };
 		8012C55A27F10C43002E49DF /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8012C55C27F10CCF002E49DF /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
+		8062890227F1912A006F2FF6 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		80CBCAB927ED083C008EC73E /* GithubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CBCABC27ED083C008EC73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80CBCABE27ED083C008EC73E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				8012C55327F1003E002E49DF /* ErrorMessage.swift */,
+				8062890227F1912A006F2FF6 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				80CBCAED27F0D04F008EC73E /* Follower.swift in Sources */,
 				80CBCAE327F0A592008EC73E /* GHBodyLabel.swift in Sources */,
 				80CBCAF627F0DBFD008EC73E /* NetworkManager.swift in Sources */,
+				8062890327F1912A006F2FF6 /* UIHelper.swift in Sources */,
 				80CBCAE127F0A39F008EC73E /* GHTitleLabel.swift in Sources */,
 				80CBCAE727F0A714008EC73E /* GHAlertViewController.swift in Sources */,
 				80CBCABF27ED083C008EC73E /* SceneDelegate.swift in Sources */,
