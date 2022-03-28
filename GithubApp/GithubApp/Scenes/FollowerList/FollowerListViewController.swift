@@ -8,11 +8,12 @@
 import UIKit
 
 class FollowerListViewController: UIViewController {
-    
+
     enum Section { case main }
     
     var username: String!
     var followers: [Follower] = []
+    var filteredFollowers: [Follower] = []
     var page = 1
     var hasMoreFollowers = true
     
@@ -23,6 +24,7 @@ class FollowerListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupCollectionView()
+        configureSearchController()
         getFollowers(username: username, page: page)
         configureDataSource()
     }
@@ -34,8 +36,13 @@ class FollowerListViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
+    
+}
+
+// MARK: Fetching Data
+extension FollowerListViewController {
     
     func getFollowers(username: String, page: Int) {
         showLoadingView()
@@ -50,9 +57,10 @@ class FollowerListViewController: UIViewController {
                     let message = "This user doesn't have any followers! Go follow them."
                     DispatchQueue.main.async {
                         self.showEmptyStateView(with: message, in: self.view)
+                        return
                     }
                 }
-                self.updateData()
+                self.updateData(on: self.followers)
             case .failure(let error):
                 self.presentAlertOnMainThread(
                     alertHeader: "Bad Stuff Happend",
@@ -64,7 +72,32 @@ class FollowerListViewController: UIViewController {
     
 }
 
-// MARK: Configure Collection View
+// MARK: SearchViewController
+extension FollowerListViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    private func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        updateData(on: filteredFollowers)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateData(on: followers)
+    }
+
+}
+
+// MARK: Configure CollectionView
 extension FollowerListViewController {
     
     private func setupCollectionView() {
@@ -89,7 +122,7 @@ extension FollowerListViewController {
         )
     }
     
-    private func updateData() {
+    private func updateData(on followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -101,6 +134,7 @@ extension FollowerListViewController {
     
 }
 
+// MARK: Delegates
 extension FollowerListViewController: UICollectionViewDelegate {
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
