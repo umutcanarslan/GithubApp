@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8012C55427F1003E002E49DF /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012C55327F1003E002E49DF /* ErrorMessage.swift */; };
 		8012C55B27F10C43002E49DF /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012C55A27F10C43002E49DF /* FollowerCollectionViewCell.swift */; };
 		8012C55D27F10CCF002E49DF /* GHAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012C55C27F10CCF002E49DF /* GHAvatarImageView.swift */; };
 		8057F9D427F247EA009E9297 /* GHEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8057F9D327F247EA009E9297 /* GHEmptyStateView.swift */; };
 		8062890327F1912A006F2FF6 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062890227F1912A006F2FF6 /* UIHelper.swift */; };
+		806B852327F37D1100940985 /* GHError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852227F37D1100940985 /* GHError.swift */; };
+		806B852527F3821000940985 /* GHSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852427F3821000940985 /* GHSecondaryTitleLabel.swift */; };
+		806B852727F382AF00940985 /* GHAvatarHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852627F382AF00940985 /* GHAvatarHeaderViewController.swift */; };
 		80CBCABD27ED083C008EC73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCABC27ED083C008EC73E /* AppDelegate.swift */; };
 		80CBCABF27ED083C008EC73E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCABE27ED083C008EC73E /* SceneDelegate.swift */; };
 		80CBCAC627ED083E008EC73E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80CBCAC527ED083E008EC73E /* Assets.xcassets */; };
@@ -28,14 +30,17 @@
 		80CBCAED27F0D04F008EC73E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCAEC27F0D04F008EC73E /* Follower.swift */; };
 		80CBCAF427F0DBBC008EC73E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCAF327F0DBBC008EC73E /* User.swift */; };
 		80CBCAF627F0DBFD008EC73E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCAF527F0DBFD008EC73E /* NetworkManager.swift */; };
+		80E9307427F3194F00FADB6F /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9307327F3194F00FADB6F /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8012C55327F1003E002E49DF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		8012C55A27F10C43002E49DF /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
 		8012C55C27F10CCF002E49DF /* GHAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarImageView.swift; sourceTree = "<group>"; };
 		8057F9D327F247EA009E9297 /* GHEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHEmptyStateView.swift; sourceTree = "<group>"; };
 		8062890227F1912A006F2FF6 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		806B852227F37D1100940985 /* GHError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHError.swift; sourceTree = "<group>"; };
+		806B852427F3821000940985 /* GHSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		806B852627F382AF00940985 /* GHAvatarHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAvatarHeaderViewController.swift; sourceTree = "<group>"; };
 		80CBCAB927ED083C008EC73E /* GithubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CBCABC27ED083C008EC73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80CBCABE27ED083C008EC73E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 		80CBCAEC27F0D04F008EC73E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		80CBCAF327F0DBBC008EC73E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		80CBCAF527F0DBFD008EC73E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		80E9307327F3194F00FADB6F /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +76,8 @@
 		8012C55227F1001F002E49DF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				8012C55327F1003E002E49DF /* ErrorMessage.swift */,
 				8062890227F1912A006F2FF6 /* UIHelper.swift */,
+				806B852227F37D1100940985 /* GHError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -120,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				80CBCAE627F0A714008EC73E /* GHAlertViewController.swift */,
+				806B852627F382AF00940985 /* GHAvatarHeaderViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 		80CBCAD127ED1B01008EC73E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				80E9307227F3192800FADB6F /* UserInfo */,
 				80CBCADD27EFB84B008EC73E /* FollowerList */,
 				80CBCAD527ED1B7A008EC73E /* Favorites */,
 				80CBCAD227ED1B07008EC73E /* Search */,
@@ -217,8 +225,9 @@
 		80CBCAE427F0A596008EC73E /* Labels */ = {
 			isa = PBXGroup;
 			children = (
-				80CBCAE027F0A39F008EC73E /* GHTitleLabel.swift */,
 				80CBCAE227F0A592008EC73E /* GHBodyLabel.swift */,
+				80CBCAE027F0A39F008EC73E /* GHTitleLabel.swift */,
+				806B852427F3821000940985 /* GHSecondaryTitleLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -246,6 +255,14 @@
 				80CBCAF527F0DBFD008EC73E /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		80E9307227F3192800FADB6F /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				80E9307327F3194F00FADB6F /* UserInfoViewController.swift */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +342,11 @@
 				80CBCADF27EFB863008EC73E /* FollowerListViewController.swift in Sources */,
 				80CBCAD727ED1B89008EC73E /* FavoritesViewController.swift in Sources */,
 				80CBCAF427F0DBBC008EC73E /* User.swift in Sources */,
-				8012C55427F1003E002E49DF /* ErrorMessage.swift in Sources */,
+				806B852727F382AF00940985 /* GHAvatarHeaderViewController.swift in Sources */,
 				8012C55B27F10C43002E49DF /* FollowerCollectionViewCell.swift in Sources */,
+				806B852327F37D1100940985 /* GHError.swift in Sources */,
 				8012C55D27F10CCF002E49DF /* GHAvatarImageView.swift in Sources */,
+				806B852527F3821000940985 /* GHSecondaryTitleLabel.swift in Sources */,
 				80CBCADA27EDB054008EC73E /* GHButton.swift in Sources */,
 				80CBCAED27F0D04F008EC73E /* Follower.swift in Sources */,
 				80CBCAE327F0A592008EC73E /* GHBodyLabel.swift in Sources */,
@@ -335,6 +354,7 @@
 				8062890327F1912A006F2FF6 /* UIHelper.swift in Sources */,
 				80CBCAE127F0A39F008EC73E /* GHTitleLabel.swift in Sources */,
 				80CBCAE727F0A714008EC73E /* GHAlertViewController.swift in Sources */,
+				80E9307427F3194F00FADB6F /* UserInfoViewController.swift in Sources */,
 				8057F9D427F247EA009E9297 /* GHEmptyStateView.swift in Sources */,
 				80CBCABF27ED083C008EC73E /* SceneDelegate.swift in Sources */,
 			);
