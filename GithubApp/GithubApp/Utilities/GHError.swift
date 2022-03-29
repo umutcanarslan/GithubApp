@@ -1,8 +1,8 @@
 //
-//  ErrorMessage.swift
+//  GHError.swift
 //  GithubApp
 //
-//  Created by Umut Can Arslan on 27.03.2022.
+//  Created by Umut Can Arslan on 29.03.2022.
 //
 
 import Foundation
