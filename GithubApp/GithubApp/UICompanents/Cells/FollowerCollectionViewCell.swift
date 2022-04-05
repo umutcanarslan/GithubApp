@@ -8,32 +8,33 @@
 import UIKit
 
 class FollowerCollectionViewCell: UICollectionViewCell {
-    
+
     static let identifier = "FollowerCollectionViewCell"
-    
+
     let avatarImageView = GHAvatarImageView(frame: .zero)
     let usernameLabel = GHTitleLabel(textAlignment: .center, fontSize: 16)
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func set(follower: Follower) {
         usernameLabel.text = follower.login
         avatarImageView.downloadImage(from: follower.avatarUrl)
     }
-    
+
     private func configure() {
+        usernameLabel.textAlignment = .center
         addSubview(avatarImageView)
         addSubview(usernameLabel)
-        
+
         let padding: CGFloat = 16
-        
+
         NSLayoutConstraint.activate(
             [
                 avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: padding),
@@ -48,5 +49,5 @@ class FollowerCollectionViewCell: UICollectionViewCell {
             ]
         )
     }
-    
+
 }
