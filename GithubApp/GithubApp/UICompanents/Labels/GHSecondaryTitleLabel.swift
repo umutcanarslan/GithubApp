@@ -20,12 +20,12 @@ class GHSecondaryTitleLabel: UILabel {
 
     init(fontSize: CGFloat) {
         super.init(frame: .zero)
-        self.font = UIFont.systemFont(ofSize: fontSize, weight: .medium  )
+        self.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
         configure()
     }
     
     private func configure() {
-        textColor = .label
+        textColor = .secondaryLabel
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.9
         lineBreakMode = .byTruncatingTail
