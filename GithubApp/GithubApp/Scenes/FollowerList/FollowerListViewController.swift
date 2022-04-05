@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FollowerListViewControllerDelegate: AnyObject {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowerListViewController: UIViewController {
 
     enum Section { case main }
@@ -38,6 +42,12 @@ class FollowerListViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = false
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func addButtonTapped() {
+        
     }
     
 }
@@ -146,6 +156,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
         
         let userInfoViewController = UserInfoViewController()
         userInfoViewController.username = follower.login
+        userInfoViewController.delegate = self
         let navigationcontroller = UINavigationController(rootViewController: userInfoViewController)
         present(navigationcontroller, animated: true)
     }
@@ -160,6 +171,20 @@ extension FollowerListViewController: UICollectionViewDelegate {
             page += 1
             self.getFollowers(username: username, page: page)
         }
+    }
+    
+}
+
+extension FollowerListViewController: FollowerListViewControllerDelegate {
+    
+    func didRequestFollowers(for username: String) {
+        self.username = username
+        title = username
+        page = 1
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        collectionView.setContentOffset(.zero, animated: true)
+        getFollowers(username: username, page: page)
     }
     
 }
