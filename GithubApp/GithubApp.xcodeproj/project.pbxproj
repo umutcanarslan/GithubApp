@@ -15,6 +15,7 @@
 		806B852527F3821000940985 /* GHSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852427F3821000940985 /* GHSecondaryTitleLabel.swift */; };
 		806B852727F382AF00940985 /* GHUserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852627F382AF00940985 /* GHUserInfoHeaderViewController.swift */; };
 		806B852927F3894B00940985 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852827F3894B00940985 /* Contants.swift */; };
+		8071CB0F27FD57AF00CCDA75 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071CB0E27FD57AF00CCDA75 /* FavoritesTableViewCell.swift */; };
 		80C42D1627FABA2800151ECE /* GHUserInfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1527FABA2800151ECE /* GHUserInfoCardViewController.swift */; };
 		80C42D1827FABD7300151ECE /* GHUserRepoInfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1727FABD7300151ECE /* GHUserRepoInfoCardViewController.swift */; };
 		80C42D1A27FABD7E00151ECE /* GHUserFollowInfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1927FABD7E00151ECE /* GHUserFollowInfoCardViewController.swift */; };
@@ -50,6 +51,7 @@
 		806B852427F3821000940985 /* GHSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		806B852627F382AF00940985 /* GHUserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserInfoHeaderViewController.swift; sourceTree = "<group>"; };
 		806B852827F3894B00940985 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		8071CB0E27FD57AF00CCDA75 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		80C42D1527FABA2800151ECE /* GHUserInfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserInfoCardViewController.swift; sourceTree = "<group>"; };
 		80C42D1727FABD7300151ECE /* GHUserRepoInfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserRepoInfoCardViewController.swift; sourceTree = "<group>"; };
 		80C42D1927FABD7E00151ECE /* GHUserFollowInfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserFollowInfoCardViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				8012C55A27F10C43002E49DF /* FollowerCollectionViewCell.swift */,
+				8071CB0E27FD57AF00CCDA75 /* FavoritesTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				80CBCADA27EDB054008EC73E /* GHButton.swift in Sources */,
 				80CBCAED27F0D04F008EC73E /* Follower.swift in Sources */,
 				80C42D1627FABA2800151ECE /* GHUserInfoCardViewController.swift in Sources */,
+				8071CB0F27FD57AF00CCDA75 /* FavoritesTableViewCell.swift in Sources */,
 				80E5AA0027F5EBF7001FCF7D /* GHInfoItemView.swift in Sources */,
 				80CBCAE327F0A592008EC73E /* GHBodyLabel.swift in Sources */,
 				80C42D2227FC0F3100151ECE /* PersistenceManager.swift in Sources */,

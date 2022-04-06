@@ -14,4 +14,16 @@ class FavoritesViewController: UIViewController {
         view.backgroundColor = .secondarySystemBackground
     }
     
+    private func favoriteControl() {
+        PersistenceManager.retrieveFavorites { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let favorites):
+                break
+            case .failure(let error):
+                break
+            }
+        }
+    }
+    
 }
