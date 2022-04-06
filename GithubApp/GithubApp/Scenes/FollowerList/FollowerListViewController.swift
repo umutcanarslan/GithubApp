@@ -67,7 +67,7 @@ class FollowerListViewController: UIViewController {
                         return
                     }
                     self.presentAlertOnMainThread(
-                        alertHeader: "Error!",
+                        alertHeader: "Something went wrong!",
                         alertMessage: error.rawValue,
                         buttonText: "Okey"
                     )
