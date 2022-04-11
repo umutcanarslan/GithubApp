@@ -16,6 +16,7 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         configureTableView()
+        getFavorites()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +87,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
-        let followerListViewController = FollowerListViewController()
-        followerListViewController.username = favorite.login
-        followerListViewController.title = favorite.login
+        let followerListViewController = FollowerListViewController(username: favorite.login)
         
         navigationController?.pushViewController(followerListViewController, animated: true)
     }
@@ -98,7 +97,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let favorite = favorites[indexPath.row]
         favorites.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
         
         PersistenceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] error in
             guard let self = self else { return }

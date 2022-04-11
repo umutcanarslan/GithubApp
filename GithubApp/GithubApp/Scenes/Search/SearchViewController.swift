@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     private let logoImageView = UIImageView()
     private let usernameTextField = GHTextField()
     private let callToActionButton = GHButton(backgroundColor: .systemGreen, title: "Get Followers")
+    var logoImageViewTopConstraint: NSLayoutConstraint!
     
     var isUsernameEntered: Bool {
         return !usernameTextField.text!.isEmpty
@@ -27,6 +28,7 @@ class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
         usernameTextField.becomeFirstResponder()
+        usernameTextField.text = ""
     }
     
     @objc private func dismissKeyboard() {
@@ -44,7 +46,15 @@ extension SearchViewController {
         
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")!
+        logoImageView.image = Images.ghLogo
+
+        let topConstraintConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 20 : 80
+
+        logoImageViewTopConstraint = logoImageView.topAnchor.constraint(
+            equalTo: view.safeAreaLayoutGuide.topAnchor,
+            constant: topConstraintConstant
+        )
+        logoImageViewTopConstraint.isActive = true
         
         view.addSubview(usernameTextField)
         usernameTextField.delegate = self
@@ -86,9 +96,10 @@ extension SearchViewController: UITextFieldDelegate {
             )
             return
         }
-        let followerListViewController = FollowerListViewController()
-        followerListViewController.username = usernameTextField.text
-        followerListViewController.title = usernameTextField.text
+
+        usernameTextField.resignFirstResponder()
+
+        let followerListViewController = FollowerListViewController(username: usernameTextField.text!)
         navigationController?.pushViewController(followerListViewController, animated: true)
     }
     

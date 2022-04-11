@@ -18,7 +18,7 @@ enum PersistenceManager {
         static let favorites = "favorites"
     }
     
-    static let defaults = UserDefaults.standard
+    static private let defaults = UserDefaults.standard
     
     static func updateWith(
         favorite: Follower,
@@ -58,7 +58,7 @@ enum PersistenceManager {
             let favorites = try decoder.decode([Follower].self, from: favoritesData)
             completed(.success(favorites))
         } catch {
-            completed(.failure(.unableToFavorite))
+            completed(.failure(.unableToDecodeFavorite))
         }
     }
     
@@ -69,7 +69,7 @@ enum PersistenceManager {
             defaults.set(encodedFavorites, forKey: Keys.favorites)
             return nil
         } catch {
-            return .unableToFavorite
+            return .unableToEncodeFavorite
         }
     }
     
