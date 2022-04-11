@@ -117,7 +117,7 @@ extension UserInfoViewController {
         self.addChild(childViewController: GHUserInfoHeaderViewController(user: user), to: self.headerView)
         self.addChild(childViewController: repositoriesInfoViewController, to: self.userProfileInfoCard)
         self.addChild(childViewController: followingInfoViewController, to: self.userFollowInfoCard)
-        self.userRegistrationDate.text = user.createdAt.convertDisplayFormat()
+        self.userRegistrationDate.text = user.createdAt.convertToMonthAndYear()
     }
     
 }

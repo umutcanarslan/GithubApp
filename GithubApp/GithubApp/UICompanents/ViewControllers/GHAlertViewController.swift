@@ -9,7 +9,7 @@ import UIKit
 
 class GHAlertViewController: UIViewController {
     
-    let containerView = UIView()
+    let containerView = GHAlertContainerView()
     let titleLabel = GHTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = GHBodyLabel(textAlignment: .center)
     let actionButton = GHButton(backgroundColor: .systemRed, title: "Okey")
@@ -33,8 +33,13 @@ class GHAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         configureAlert()
+    }
+
+    private func setupAlert() {
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
     }
     
     @objc private func buttonTapped() {
@@ -43,12 +48,7 @@ class GHAlertViewController: UIViewController {
     
     private func configureAlert() {
         view.addSubview(containerView)
-        containerView.backgroundColor = .systemBackground
-        containerView.layer.cornerRadius = 16
-        containerView.layer.borderWidth = 2
-        containerView.layer.borderColor = UIColor.white.cgColor
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         containerView.addSubview(titleLabel)
         titleLabel.text = alertHeader ?? "Something went wrong"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

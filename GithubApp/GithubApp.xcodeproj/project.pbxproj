@@ -17,11 +17,11 @@
 		806B852927F3894B00940985 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B852827F3894B00940985 /* Contants.swift */; };
 		8071CB0F27FD57AF00CCDA75 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071CB0E27FD57AF00CCDA75 /* FavoritesTableViewCell.swift */; };
 		807420E52803F5C200DF9363 /* GHTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807420E42803F5C200DF9363 /* GHTabBarViewController.swift */; };
+		80B5CE472804437D00E9525F /* GHAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5CE462804437D00E9525F /* GHAlertContainerView.swift */; };
 		80C42D1627FABA2800151ECE /* GHUserInfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1527FABA2800151ECE /* GHUserInfoCardViewController.swift */; };
 		80C42D1827FABD7300151ECE /* GHUserRepoInfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1727FABD7300151ECE /* GHUserRepoInfoCardViewController.swift */; };
 		80C42D1A27FABD7E00151ECE /* GHUserFollowInfoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1927FABD7E00151ECE /* GHUserFollowInfoCardViewController.swift */; };
 		80C42D1E27FAC5A900151ECE /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1D27FAC5A900151ECE /* Date+Extension.swift */; };
-		80C42D2027FAC60800151ECE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D1F27FAC60800151ECE /* String+Extension.swift */; };
 		80C42D2227FC0F3100151ECE /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C42D2127FC0F3100151ECE /* PersistenceManager.swift */; };
 		80CBCABD27ED083C008EC73E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCABC27ED083C008EC73E /* AppDelegate.swift */; };
 		80CBCABF27ED083C008EC73E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CBCABE27ED083C008EC73E /* SceneDelegate.swift */; };
@@ -54,11 +54,11 @@
 		806B852827F3894B00940985 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		8071CB0E27FD57AF00CCDA75 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		807420E42803F5C200DF9363 /* GHTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHTabBarViewController.swift; sourceTree = "<group>"; };
+		80B5CE462804437D00E9525F /* GHAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAlertContainerView.swift; sourceTree = "<group>"; };
 		80C42D1527FABA2800151ECE /* GHUserInfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserInfoCardViewController.swift; sourceTree = "<group>"; };
 		80C42D1727FABD7300151ECE /* GHUserRepoInfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserRepoInfoCardViewController.swift; sourceTree = "<group>"; };
 		80C42D1927FABD7E00151ECE /* GHUserFollowInfoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserFollowInfoCardViewController.swift; sourceTree = "<group>"; };
 		80C42D1D27FAC5A900151ECE /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		80C42D1F27FAC60800151ECE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		80C42D2127FC0F3100151ECE /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		80CBCAB927ED083C008EC73E /* GithubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CBCABC27ED083C008EC73E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +141,7 @@
 			children = (
 				8057F9D327F247EA009E9297 /* GHEmptyStateView.swift */,
 				80E5A9FF27F5EBF7001FCF7D /* GHInfoItemView.swift */,
+				80B5CE462804437D00E9525F /* GHAlertContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,7 +281,6 @@
 			children = (
 				80CBCAE827F0B18B008EC73E /* UIViewController+Extension.swift */,
 				80C42D1D27FAC5A900151ECE /* Date+Extension.swift */,
-				80C42D1F27FAC60800151ECE /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,8 +410,8 @@
 				80CBCAE127F0A39F008EC73E /* GHTitleLabel.swift in Sources */,
 				80CBCAE727F0A714008EC73E /* GHAlertViewController.swift in Sources */,
 				80E9307427F3194F00FADB6F /* UserInfoViewController.swift in Sources */,
+				80B5CE472804437D00E9525F /* GHAlertContainerView.swift in Sources */,
 				8057F9D427F247EA009E9297 /* GHEmptyStateView.swift in Sources */,
-				80C42D2027FAC60800151ECE /* String+Extension.swift in Sources */,
 				80CBCABF27ED083C008EC73E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
