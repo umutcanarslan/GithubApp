@@ -27,15 +27,16 @@ class GHEmptyStateView: UIView {
     }
     
     private func emptyStateViewConfigure() {
+        configureMessageLabel()
+        configureImageView()
+    }
+
+    private func configureMessageLabel() {
         addSubview(messageLabel)
-        addSubview(logoImageView)
-        
+
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        logoImageView.image = Images.emptyStateLogo
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
 
         let labelCenterYConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? -150 : -150
         let messageLabelCenterYConstraint = messageLabel.centerYAnchor.constraint(
@@ -44,20 +45,31 @@ class GHEmptyStateView: UIView {
         )
         messageLabelCenterYConstraint.isActive = true
 
+        NSLayoutConstraint.activate(
+            [
+                messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -200),
+                messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+                messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+                messageLabel.heightAnchor.constraint(equalToConstant: 200)
+            ]
+        )
+    }
+
+    private func configureImageView() {
+        addSubview(logoImageView)
+
+        logoImageView.image = Images.emptyStateLogo
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+
         let logoBottomConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 60 : 40
         let logoImageViewBottomConstraint = logoImageView.bottomAnchor.constraint(
             equalTo: self.bottomAnchor,
             constant: logoBottomConstant
         )
         logoImageViewBottomConstraint.isActive = true
-        
+
         NSLayoutConstraint.activate(
             [
-                messageLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -200),
-                messageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-                messageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-                messageLabel.heightAnchor.constraint(equalToConstant: 200),
-                
                 logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
                 logoImageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
                 logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 200),
