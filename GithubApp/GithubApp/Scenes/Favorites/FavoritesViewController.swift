@@ -65,6 +65,7 @@ class FavoritesViewController: GHDataLoadingViewController {
         tableView.rowHeight = 78
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.removeExcessCell()
         
         tableView.register(FavoritesTableViewCell.self, forCellReuseIdentifier: FavoritesTableViewCell.identifier)
     }
