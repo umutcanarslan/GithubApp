@@ -59,13 +59,8 @@ class GHUserInfoHeaderViewController: UIViewController {
     private func configureAvatarHeader() {
         let padding: CGFloat = 16
         let secondaryPadding: CGFloat = 8
-        
-        view.addSubview(avatarImageView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(locationIcon)
-        view.addSubview(locationLabel)
-        view.addSubview(bioLabel)
+
+        view.addSubviews(avatarImageView, usernameLabel, nameLabel, locationIcon, locationLabel, bioLabel)
         
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         usernameLabel.translatesAutoresizingMaskIntoConstraints = false

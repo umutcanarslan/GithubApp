@@ -43,8 +43,9 @@ extension SearchViewController {
     private func setupUI() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
-        
-        view.addSubview(logoImageView)
+
+        view.addSubviews(logoImageView, usernameTextField, callToActionButton)
+
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = Images.ghLogo
 
@@ -55,11 +56,9 @@ extension SearchViewController {
             constant: topConstraintConstant
         )
         logoImageViewTopConstraint.isActive = true
-        
-        view.addSubview(usernameTextField)
+
         usernameTextField.delegate = self
         
-        view.addSubview(callToActionButton)
         callToActionButton.addTarget(self, action: #selector(pushFollowerListViewController), for: .touchUpInside)
         
         NSLayoutConstraint.activate(

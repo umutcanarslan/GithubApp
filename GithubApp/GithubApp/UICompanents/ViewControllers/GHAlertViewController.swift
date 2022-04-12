@@ -33,7 +33,6 @@ class GHAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         configureAlert()
     }
@@ -47,18 +46,16 @@ class GHAlertViewController: UIViewController {
     }
     
     private func configureAlert() {
-        view.addSubview(containerView)
 
-        containerView.addSubview(titleLabel)
+        view.addSubviews(containerView, titleLabel, messageLabel, actionButton)
+
         titleLabel.text = alertHeader ?? "Something went wrong"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerView.addSubview(messageLabel)
+
         messageLabel.text = alertMessage ?? "A problem was encountered, please try again."
         messageLabel.numberOfLines = 4
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerView.addSubview(actionButton)
+
         actionButton.setTitle(buttonText ?? "Okey", for: .normal)
         actionButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         actionButton.translatesAutoresizingMaskIntoConstraints = false

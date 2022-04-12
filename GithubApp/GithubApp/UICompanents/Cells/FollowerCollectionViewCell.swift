@@ -35,8 +35,8 @@ class FollowerCollectionViewCell: UICollectionViewCell {
 
     private func configure() {
         usernameLabel.textAlignment = .center
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
+
+        addSubviews(avatarImageView, usernameLabel)
 
         let padding: CGFloat = 16
 
