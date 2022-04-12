@@ -8,8 +8,7 @@
 import UIKit
 
 protocol UserInfoViewControllerDelegate: AnyObject {
-    func didTapGitHubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
+    func didRequestFollowers(for username: String)
 }
 
 class UserInfoViewController: GHDataLoadingViewController {
@@ -21,7 +20,7 @@ class UserInfoViewController: GHDataLoadingViewController {
     var itemView: [UIView] = []
     
     var username: String!
-    weak var delegate: FollowerListViewControllerDelegate!
+    weak var delegate: UserInfoViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,22 +107,25 @@ extension UserInfoViewController {
     }
     
     private func configureUIElements(with user: User) {
-        let repositoriesInfoViewController = GHUserRepoInfoCardViewController(user: user)
-        repositoriesInfoViewController.delegate = self
-        
-        let followingInfoViewController = GHUserFollowInfoCardViewController(user: user)
-        followingInfoViewController.delegate = self
-        
-        self.addChild(childViewController: GHUserInfoHeaderViewController(user: user), to: self.headerView)
-        self.addChild(childViewController: repositoriesInfoViewController, to: self.userProfileInfoCard)
-        self.addChild(childViewController: followingInfoViewController, to: self.userFollowInfoCard)
+        self.addChild(
+            childViewController: GHUserInfoHeaderViewController(user: user),
+            to: self.headerView
+        )
+        self.addChild(
+            childViewController: GHUserRepoInfoCardViewController(user: user, delegate: self),
+            to: self.userProfileInfoCard
+        )
+        self.addChild(
+            childViewController: GHUserFollowInfoCardViewController(user: user, delegate: self),
+            to: self.userFollowInfoCard
+        )
         self.userRegistrationDate.text = user.createdAt.convertToMonthAndYear()
     }
     
 }
 
-extension UserInfoViewController: UserInfoViewControllerDelegate {
-    
+extension UserInfoViewController: GHUserRepoInfoCardViewControllerDelegate {
+
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentAlertOnMainThread(
@@ -135,7 +137,11 @@ extension UserInfoViewController: UserInfoViewControllerDelegate {
         }
         presentWebView(with: url)
     }
-    
+
+}
+
+extension UserInfoViewController: GHUserFollowInfoCardViewControllerDelegate {
+
     func didTapGetFollowers(for user: User) {
         guard user.followers != 0 else {
             presentAlertOnMainThread(
@@ -148,5 +154,5 @@ extension UserInfoViewController: UserInfoViewControllerDelegate {
         delegate.didRequestFollowers(for: user.login)
         dismiss(animated: true)
     }
-    
+
 }

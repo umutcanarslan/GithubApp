@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol GHUserInfoCardViewControllerDelegate: AnyObject {
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
+
 class GHUserInfoCardViewController: UIViewController {
     
     let stackView = UIStackView()
@@ -15,7 +20,6 @@ class GHUserInfoCardViewController: UIViewController {
     let actionButton = GHButton()
     
     var user: User!
-    weak var delegate: UserInfoViewControllerDelegate!
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)

@@ -220,7 +220,7 @@ extension FollowerListViewController: UICollectionViewDelegate {
     
 }
 
-extension FollowerListViewController: FollowerListViewControllerDelegate {
+extension FollowerListViewController: UserInfoViewControllerDelegate {
     
     func didRequestFollowers(for username: String) {
         self.username = username
