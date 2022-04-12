@@ -27,8 +27,8 @@ class GHDataLoadingViewController: UIViewController {
 
         NSLayoutConstraint.activate(
             [
-                activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+                activityIndicator.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
             ]
         )
         activityIndicator.startAnimating()

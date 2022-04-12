@@ -34,8 +34,22 @@ class GHEmptyStateView: UIView {
         messageLabel.textColor = .secondaryLabel
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        logoImageView.image = UIImage(named: "empty-state-logo")
+        logoImageView.image = Images.emptyStateLogo
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let labelCenterYConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? -150 : -150
+        let messageLabelCenterYConstraint = messageLabel.centerYAnchor.constraint(
+            equalTo: self.centerYAnchor,
+            constant: labelCenterYConstant
+        )
+        messageLabelCenterYConstraint.isActive = true
+
+        let logoBottomConstant: CGFloat = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 60 : 40
+        let logoImageViewBottomConstraint = logoImageView.bottomAnchor.constraint(
+            equalTo: self.bottomAnchor,
+            constant: logoBottomConstant
+        )
+        logoImageViewBottomConstraint.isActive = true
         
         NSLayoutConstraint.activate(
             [
@@ -47,7 +61,6 @@ class GHEmptyStateView: UIView {
                 logoImageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
                 logoImageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.3),
                 logoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 200),
-                logoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 50)
             ]
         )
     }
