@@ -12,6 +12,9 @@ protocol UserInfoViewControllerDelegate: AnyObject {
 }
 
 class UserInfoViewController: GHDataLoadingViewController {
+
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     
     let headerView = UIView()
     let userProfileInfoCard = UIView()
@@ -33,6 +36,7 @@ class UserInfoViewController: GHDataLoadingViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
         navigationItem.rightBarButtonItem = doneButton
         navigationItem.title = "\(username ?? "Github User")'s Profile"
+
         layoutUI()
     }
     
@@ -55,7 +59,7 @@ class UserInfoViewController: GHDataLoadingViewController {
         
         NSLayoutConstraint.activate(
             [
-                headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+                headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
                 headerView.heightAnchor.constraint(equalToConstant: 180),
                 
                 userProfileInfoCard.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
@@ -66,6 +70,21 @@ class UserInfoViewController: GHDataLoadingViewController {
                 
                 userRegistrationDate.topAnchor.constraint(equalTo: userFollowInfoCard.bottomAnchor, constant: padding),
                 userRegistrationDate.heightAnchor.constraint(equalToConstant: 18)
+            ]
+        )
+    }
+
+    private func configureScrollView() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+
+        scrollView.pinToEdges(of: view)
+        contentView.pinToEdges(of: scrollView)
+
+        NSLayoutConstraint.activate(
+            [
+                contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+                contentView.heightAnchor.constraint(equalToConstant: 2000)
             ]
         )
     }
