@@ -67,16 +67,16 @@ class GHInfoItemView: UIView {
     func set(infoItemType: InfoItemType, withCount count: Int) {
         switch infoItemType {
         case .repositories:
-            symbolImageView.image = UIImage(systemName: SFSymbol.repositories)
+            symbolImageView.image = SFSymbol.repositories
             titleLabel.text = "Public Respos"
         case .gists:
-            symbolImageView.image = UIImage(systemName: SFSymbol.gists)
+            symbolImageView.image = SFSymbol.gists
             titleLabel.text = "Public Gists"
         case .follower:
-            symbolImageView.image = UIImage(systemName: SFSymbol.follower)
+            symbolImageView.image = SFSymbol.follower
             titleLabel.text = "Follower"
         case.following:
-            symbolImageView.image = UIImage(systemName: SFSymbol.following)
+            symbolImageView.image = SFSymbol.following
             titleLabel.text = "Following"
         }
         countLabel.text = String(count)

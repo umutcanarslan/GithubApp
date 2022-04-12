@@ -43,7 +43,7 @@ class GHUserInfoHeaderViewController: UIViewController {
         bioLabel.text = user.bio ?? "No biography available"
         bioLabel.numberOfLines = 3
         
-        locationIcon.image = UIImage(systemName: SFSymbol.location)
+        locationIcon.image = SFSymbol.location
         locationIcon.tintColor = .systemBlue
     }
 
