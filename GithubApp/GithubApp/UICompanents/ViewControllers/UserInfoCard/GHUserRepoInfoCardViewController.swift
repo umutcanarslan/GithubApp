@@ -32,7 +32,7 @@ class GHUserRepoInfoCardViewController: GHUserInfoCardViewController {
     private func configureCard() {
         itemInfoCardLeft.set(infoItemType: .repositories, withCount: user.publicRepos)
         itemInfoCardRight.set(infoItemType: .gists, withCount: user.publicGists)
-        actionButton.set(backgroundColor: .systemPink, title: "GitHub Profile")
+        actionButton.set(color: .systemPink, title: "GitHub Profile", systemImageName: "person")
     }
     
     override func actionButtonTapped() {

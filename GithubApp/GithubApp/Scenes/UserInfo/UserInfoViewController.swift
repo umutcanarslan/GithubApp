@@ -59,7 +59,7 @@ class UserInfoViewController: GHDataLoadingViewController {
         
         NSLayoutConstraint.activate(
             [
-                headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
+                headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
                 headerView.heightAnchor.constraint(equalToConstant: 180),
                 
                 userProfileInfoCard.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),

@@ -12,7 +12,7 @@ class GHAlertViewController: UIViewController {
     let containerView = GHAlertContainerView()
     let titleLabel = GHTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = GHBodyLabel(textAlignment: .center)
-    let actionButton = GHButton(backgroundColor: .systemRed, title: "Okey")
+    let actionButton = GHButton(backgroundColor: .systemRed, title: "Okey", systemImageName: "checkmark.circle")
     
     var alertHeader: String?
     var alertMessage: String?
