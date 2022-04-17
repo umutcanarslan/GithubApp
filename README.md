@@ -8,10 +8,10 @@ An application where you can see the followers of github users and add them to f
 https://seanallen.teachable.com/p/take-home
 
 ### Screenshots:
-<img src="./Images/1.png" width="207" height="406">&nbsp;
-<img src="./Images/2.png" width="207" height="406">&nbsp;
-<img src="./Images/3.png" width="207" height="406">&nbsp;
-<img src="./Images/4.png" width="207" height="406"><br>
+<img src="./images/1.png" width="207" height="406">&nbsp;
+<img src="./images/2.png" width="207" height="406">&nbsp;
+<img src="./images/3.png" width="207" height="406">&nbsp;
+<img src="./images/4.png" width="207" height="406"><br>
 
 ### Used Technologies:
 - Collection View
