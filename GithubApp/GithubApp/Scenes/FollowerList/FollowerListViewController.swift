@@ -101,32 +101,69 @@ extension FollowerListViewController {
     func getFollowers(username: String, page: Int) {
         showLoadingView()
         isLoadingMoreFollowers = true
-        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-            guard let self = self else { return }
-            self.hideLoadingView()
-            switch result {
-            case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false }
-                self.followers.append(contentsOf: followers)
-                if self.followers.isEmpty {
-                    let message = "This user doesn't have any followers! Go follow them."
-                    DispatchQueue.main.async {
-                        self.showEmptyStateView(with: message, in: self.view)
-                        return
-                    }
-                }
-                self.updateData(on: self.followers)
-            case .failure(let error):
-                self.presentAlertOnMainThread(
-                    alertHeader: "Bad Stuff Happend",
-                    alertMessage: error.rawValue,
-                    buttonText: "Okey")
+
+        Task {
+//            do {
+//                let followers = try await NetworkManager.shared.getFollowers(for: username, page: page)
+//                updateUI(with: followers)
+//                hideLoadingView()
+//            } catch {
+//                if let ghError = error as? GHError {
+//                    presentAlert(alertHeader: "Bad Stuff Happend", alertMessage: ghError.rawValue,buttonText:"Okey")
+//                } else {
+//                    presentDefaultError()
+//                }
+//                hideLoadingView()
+//            }
+
+            guard let followers = try? await NetworkManager.shared.getFollowers(for: username, page: page) else {
+                presentDefaultError()
+                hideLoadingView()
+                return
             }
-            self.isLoadingMoreFollowers = false
+            updateUI(with: followers)
+            hideLoadingView()
         }
     }
-    
+
+    func updateUI(with followers: [Follower]) {
+        if followers.count < 100 { self.hasMoreFollowers = false }
+        self.followers.append(contentsOf: followers)
+        if followers.isEmpty {
+            let message = "This user doesn't have any followers! Go follow them."
+            DispatchQueue.main.async {
+                self.showEmptyStateView(with: message, in: self.view)
+                return
+            }
+        }
+    }
+
 }
+//        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+//            guard let self = self else { return }
+//            self.hideLoadingView()
+//            switch result {
+//            case .success(let followers):
+//                if followers.count < 100 { self.hasMoreFollowers = false }
+//                self.followers.append(contentsOf: followers)
+//                if self.followers.isEmpty {
+//                    let message = "This user doesn't have any followers! Go follow them."
+//                    DispatchQueue.main.async {
+//                        self.showEmptyStateView(with: message, in: self.view)
+//                        return
+//                    }
+//                }
+////                self.updateData(on: self.followers)
+//            case .failure(let error):
+//                self.presentAlertOnMainThread(
+//                    alertHeader: "Bad Stuff Happend",
+//                    alertMessage: error.rawValue,
+//                    buttonText: "Okey")
+//            }
+//            self.isLoadingMoreFollowers = false
+//        }
+//    }
+
 
 // MARK: SearchViewController
 extension FollowerListViewController: UISearchResultsUpdating {
