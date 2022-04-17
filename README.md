@@ -8,16 +8,22 @@ An application where you can see the followers of github users and add them to f
 https://seanallen.teachable.com/p/take-home
 
 ### Screenshots:
-<img src="./GithubApp/Images/1.png" width="300" height="512">&nbsp;
-<img src="./GithubApp/Images/2.png" width="300" height="512">&nbsp;
-<img src="./GithubApp/Images/3.png" width="300" height="512">&nbsp;
-<img src="./GithubApp/Images/4.png" width="300" height="512"><br>
+<img src="./images/1.png" width="254" height="550">&nbsp;
+<img src="./images/2.png" width="254" height="550">&nbsp;
+<img src="./images/3.png" width="254" height="550">&nbsp;
+<img src="./images/4.png" width="254" height="550"><br>
 
 ### Used Technologies:
-- Collection View
-- Table View
+- Collection View & Custom Collection View Cell
+- Table View & Custom Collection View Cell
 - Safari Service
-- Async / Throws  
+- Async / Throws Network Manager
+- Error Handling
+- Custom Views
+- Custom Pop-up  
+- Child View Controller
+- Custom Tabbar Configuration
+- Date Decoding
 
 ### Features:
 - User's Follower
