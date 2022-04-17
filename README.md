@@ -11,7 +11,7 @@ https://seanallen.teachable.com/p/take-home
 <img src="./GithubApp/Images/1.png" width="300" height="512">&nbsp;
 <img src="./GithubApp/Images/2.png" width="300" height="512">&nbsp;
 <img src="./GithubApp/Images/3.png" width="300" height="512">&nbsp;
-<img src="./GithubApp/Images/4.png" width="300" height="406"><br>
+<img src="./GithubApp/Images/4.png" width="300" height="512"><br>
 
 ### Used Technologies:
 - Collection View
